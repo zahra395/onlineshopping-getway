@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title> StatusPayment</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+
+<body>
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2 class="active"> RESULT  </h2>
+    <!-- Login Form -->
+      {% block content %}
+
+    <form  method="POST" action="/Card/">{% csrf_token %}
+      {% autoescape on %}
+      <h1> {{result}} </h1>
+      {% endautoescape %}
+
+    </form>
+    {% endblock %}
+  </div>
+
+</div>
+
+</body>
+
+</html>

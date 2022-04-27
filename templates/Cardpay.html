@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title> OnlineShopping</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+
+<body>
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2 class="active"> نهایی کردن سفارش  </h2>
+    <!-- Login Form -->
+      {% block content %}
+
+    <form  method="post" action="/Card/">{% csrf_token %}
+      <input type="text" id="refNumber" class="fadeIn first" name="refNumber" placeholder="Mobile">
+      <input type="text" id="amount" class="fadeIn second" name="amount" placeholder="product final price">
+      <input type="text" id="order_id" class="fadeIn third" name="order_id" placeholder="product id">
+      <input type="text" id="email" class="fadeIn third" name="email" placeholder="email Address">
+
+
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <input name="save" type="submit" type="submit" class="fadeIn fourth" value="Verify The Order">
+    </div>
+      </form>
+
+  </div>
+    {% endblock %}
+</div>
+
+</body>
+
+</html>
